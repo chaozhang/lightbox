@@ -15,7 +15,7 @@ class Home extends React.Component {
 
   render() {
     Api.getImages().then((data) => {
-      $('.content').append(data.items);
+      
     });
 
     return <div className="content home">

@@ -13,8 +13,7 @@ var paths = {
   assets: './assets',
   src: './src',
   output: './www',
-  npm: './node_modules',
-  vendor: './src/js/vendor'
+  npm: './node_modules'
 };
 
 // deploy to prod server
@@ -34,16 +33,6 @@ gulp.task('app:js', function () {
   }))
   .bundle()
   .pipe(source('app.js'))
-  .pipe(gulp.dest(paths.output + '/js'));
-});
-
-// build vendor js
-gulp.task('app:js:vendor', function () {
-  gulp.src([
-    paths.vendor + '/jquery-1.11.3.min.js',
-    paths.vendor + '/underscore-1.8.3.min.js'
-  ])
-  .pipe(concat('vendor.js'))
   .pipe(gulp.dest(paths.output + '/js'));
 });
 
@@ -71,7 +60,7 @@ gulp.task('app:assets', function() {
 });
 
 // default build process
-gulp.task('default', ['app:js', 'app:js:vendor', 'app:html', 'app:css', 'app:assets'], function(){
+gulp.task('default', ['app:js', 'app:html', 'app:css', 'app:assets'], function(){
   console.log(' --- gulp build done --- ');
 });
 

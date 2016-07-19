@@ -44,7 +44,7 @@ class Enum {
 	static build(EnumClass, enumDefs) {
 		var curEnum, curName, curOrdinal = 0, curValue, normalizedName, _i, _len, _ref;
 
-		if (_.isArray(enumDefs)) {
+		if (Array.isArray(enumDefs)) {
 			this._ENUMS = (function() {
 				var _i, _len, _results;
 				_results = [];
