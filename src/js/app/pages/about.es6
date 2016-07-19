@@ -1,17 +1,15 @@
 import React from 'react'
-import Store from '../store/store.es6'
 
- 
+const PATH_ASSET = "../assets/pdf/Resume-Chao.Zhang.pdf";
+
+
 class About extends React.Component {
-  state = {
-    data: null
-  }
 
   render() {
     return <div className="content about">
       <label>About Chao</label>
-      <object src="../assets/pdf/Resume-Chao.Zhang.pdf">
-        <embed src="../assets/pdf/Resume-Chao.Zhang.pdf"/>
+      <object src={PATH_ASSET}>
+        <embed src={PATH_ASSET}/>
       </object>
     </div>;
   }
