@@ -1,0 +1,32 @@
+.bodywrap > header
+	display flex
+	justify-content center
+	align-items center
+	height 100px
+
+	.container
+		display flex
+		justify-content space-between
+		width content-width
+
+		#logo
+			svg
+				width 100px
+				height 100px
+				fill color-blue-aluminium
+				margin-right 5px
+		
+		.links
+			display flex
+			justify-content center
+			align-items center
+
+			a
+				display block
+				padding 0 spacing-x-small
+				
+				:hover
+					text-decoration underline
+
+				&:first-child
+					border-right 1px solid color-blue-aluminium 
