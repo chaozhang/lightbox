@@ -56,7 +56,7 @@ var Api = {
     url += "key=" + API_KEY;
     url += "&cx=" + GOOGLE_SEARCH_ENGINE_ID;
     url += "&q=" + keyword;
-    url += "&searchType=image";
+    url += "&searchType=image&imgSize=medium";
 
     return _request.jsonp(url);
   }
