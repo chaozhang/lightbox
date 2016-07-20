@@ -1,4 +1,5 @@
 import React from 'react'
+import Lightbox from './lightbox.es6'
 
 
 class ImagesGrid extends React.Component {
@@ -14,7 +15,7 @@ class ImagesGrid extends React.Component {
 
     this.props.images.forEach((item, index) => {
       // create click callback
-      let clickEvent = this._openLightBox.bind(this, index)
+      let clickEvent = this._openLightbox.bind(this, index)
 
   		images.push(
   			<li title={item.title} onClick={clickEvent}>
@@ -24,24 +25,29 @@ class ImagesGrid extends React.Component {
   	})
 
     if(this.state.lightboxShowing) {
-      // lightboxComp = <div>{this.}</div>;
+      lightboxComp = <Lightbox
+        selectedIndex={this.state.lightboxSelected}
+        images={this.props.images}
+        onClose={this._closeLightbox.bind(this)}
+      />;
     }
 
     return <div className="images-grid">
       <ul>
       	{images}
       </ul>
+      {lightboxComp}
     </div>;
   }
 
-  _openLightBox(index) {
+  _openLightbox(index) {
     this.setState({
       lightboxShowing: true,
       lightboxSelected: index
     });
   }
 
-  _closeLightBox() {
+  _closeLightbox() {
     this.setState({
       lightboxShowing: false,
       lightboxSelected: null

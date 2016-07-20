@@ -1,10 +1,10 @@
 import Enum from '../core/enum.es6'
 
-class Pages extends Enum {}
+class Page extends Enum {}
 
-Pages.build(Pages, {
+Page.build(Page, {
 	HOME: "home",
 	ABOUT: "about"
 })
 
-export default Pages
+export default Page

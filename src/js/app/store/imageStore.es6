@@ -2,19 +2,12 @@ import Api from './api.es6'
 
 const SEARCH_TERMS = [
   "goal",
-  "road",
+  "leadership",
   "direction"
 ];
 
 var _data = {
-  images: [
-    {link:"http://www.macforensicslab.com/images/icon_TriageDirection.jpg"},
-    {link:"http://www.macforensicslab.com/images/icon_TriageDirection.jpg"},
-    {link:"http://www.macforensicslab.com/images/icon_TriageDirection.jpg"},
-    {link:"http://www.macforensicslab.com/images/icon_TriageDirection.jpg"},
-    {link:"http://www.macforensicslab.com/images/icon_TriageDirection.jpg"},
-    {link:"http://www.macforensicslab.com/images/icon_TriageDirection.jpg"}
-  ]
+  images: []
 }
 
 

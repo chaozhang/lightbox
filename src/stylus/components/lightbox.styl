@@ -1,0 +1,41 @@
+.lightbox .modal-body
+	flex-direction row
+
+	img
+		width 30rem
+		height 20rem
+		
+	.nav
+		display flex
+		justify-content center
+		align-items center
+		
+		.left
+			margin-right 1rem
+			
+		.right
+			margin-left 1rem
+
+		a
+			display flex
+			cursor pointer
+
+			&:hover
+			&:focus
+				opacity .6
+			&:active
+				opacity .8
+
+			svg
+				width 3rem
+				height 3rem
+				fill color-blue-ghost
+				transition timing-1 opacity linear
+
+				path
+					fill color-blue-aluminium
+					transition timing-1 fill linear
+
+				&:hover
+					path
+						fill darken(color-blue-aluminium, 20%)

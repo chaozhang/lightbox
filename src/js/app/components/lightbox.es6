@@ -1,36 +1,73 @@
 import React from 'react'
-
-var _openLightBox = (imgSrc, index) => {
-  React.render(<div id="modal">{imgSrc} index {index}</div>, document.getElementById("overlay"));
-}
+import Direction from '../enums/direction.es6'
+import Icon from './icon.es6'
 
 
-class ImagesGrid extends React.Component {
+class Lightbox extends React.Component {
+
+  state = {
+    selectedIndex: this.props.selectedIndex
+  }
 
   render() {
-  	let images = [];
+    var selectedImg = {
+      link: this.props.images[this.state.selectedIndex].link,
+      title: this.props.images[this.state.selectedIndex].title
+    };
 
-    this.props.images.forEach((item, index) => {
-      // create click callback
-      let clickEvent = _openLightBox.bind(null, item.link, index)
-
-  		images.push(
-  			<li title={item.title} onClick={clickEvent}>
-  				<img src={item.link}/>
-  			</li>
-  		);
-  	})
-
-    return <div className="images-grid">
-      <ul>
-      	{images}
-      </ul>
+    return <div className="overlay lightbox">
+      <div className="modal">
+        <div className="modal-header">
+          <div className="modal-title">
+            Lightbox Gallery
+          </div>
+          <a className="modal-close" onClick={this.props.onClose}>
+            <Icon iconName="close"/>
+          </a>
+        </div>
+        <div className="modal-body">
+          <div className="nav">
+            <a className="left" onClick={this._onNavigate.bind(this, Direction.PREV)}>
+              <Icon iconName="chevronleft"/>
+            </a>
+          </div>
+          <img src={selectedImg.link}/>
+          <div className="nav">
+            <a className="right" onClick={this._onNavigate.bind(this, Direction.NEXT)}>
+              <Icon iconName="chevronright"/>
+            </a>
+          </div>
+        </div>
+        <div className="modal-footer">
+          {selectedImg.title}
+        </div>       
+      </div>
     </div>;
   }
 
-  _openLightBox(imgSrc, index) => {
+  _onNavigate(direction) {
+    var currentIndex = this.state.selectedIndex;
 
+    switch (direction) {
+      case Direction.PREV:
+        currentIndex--;
+        break;
+      case Direction.NEXT:
+        currentIndex++;
+        break;
+    }
+
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    } else if (currentIndex > this.props.images.length-1) {
+      currentIndex = this.props.images.length -1;
+    }
+
+    this.setState({
+      selectedIndex: currentIndex
+    });
   }
 }
+
  
-export default ImagesGrid
+export default Lightbox
