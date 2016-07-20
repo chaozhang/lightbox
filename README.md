@@ -7,7 +7,7 @@ git clone https://github.com/chaozhang/lightbox.git
 
 npm install
 
-gulp
+gulp && gulp server
 
 http://localhost:3001/ for local development
 
