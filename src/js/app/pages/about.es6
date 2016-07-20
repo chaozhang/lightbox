@@ -1,16 +1,17 @@
 import React from 'react'
 
-const PATH_ASSET = "../assets/pdf/Resume-Chao.Zhang.pdf";
-
 
 class About extends React.Component {
 
   render() {
     return <div className="content about">
       <label>About Chao</label>
-      <object src={PATH_ASSET}>
-        <embed src={PATH_ASSET}/>
-      </object>
+      <p>
+        Senior Software Engineer at Salseforce
+      </p>
+      <p>
+        Connect from LinkedIn: https://www.linkedin.com/in/chao-zhang-29532710?trk=nav_responsive_tab_profile
+      </p>
     </div>;
   }
 }
