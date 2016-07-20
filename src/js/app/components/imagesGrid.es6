@@ -10,19 +10,19 @@ class ImagesGrid extends React.Component {
   }
 
   render() {
-  	var images = [],
+    var images = [],
     lightboxComp;
 
     this.props.images.forEach((item, index) => {
       // create click callback
       let clickEvent = this._openLightbox.bind(this, index)
 
-  		images.push(
-  			<li title={item.title} onClick={clickEvent}>
-  				<img src={item.link}/>
-  			</li>
-  		);
-  	})
+      images.push(
+        <li title={item.title} onClick={clickEvent}>
+          <img src={item.link}/>
+        </li>
+      );
+    })
 
     if(this.state.lightboxShowing) {
       lightboxComp = <Lightbox
@@ -34,7 +34,7 @@ class ImagesGrid extends React.Component {
 
     return <div className="images-grid">
       <ul>
-      	{images}
+        {images}
       </ul>
       {lightboxComp}
     </div>;

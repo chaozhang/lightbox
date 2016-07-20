@@ -40,7 +40,7 @@ class Lightbox extends React.Component {
         </div>
         <div className="modal-footer">
           {selectedImg.title}
-        </div>       
+        </div>
       </div>
     </div>;
   }
