@@ -3,22 +3,49 @@ import React from 'react'
 
 class ImagesGrid extends React.Component {
 
-  render() {
-  	let images = [];
+  state = {
+    lightboxShowing: false,
+    lightboxSelected: null
+  }
 
-  	for(let item of this.props.images){
+  render() {
+  	var images = [],
+    lightboxComp;
+
+    this.props.images.forEach((item, index) => {
+      // create click callback
+      let clickEvent = this._openLightBox.bind(this, index)
+
   		images.push(
-  			<li title={item.title}>
+  			<li title={item.title} onClick={clickEvent}>
   				<img src={item.link}/>
   			</li>
   		);
-  	}
+  	})
+
+    if(this.state.lightboxShowing) {
+      // lightboxComp = <div>{this.}</div>;
+    }
 
     return <div className="images-grid">
       <ul>
       	{images}
       </ul>
     </div>;
+  }
+
+  _openLightBox(index) {
+    this.setState({
+      lightboxShowing: true,
+      lightboxSelected: index
+    });
+  }
+
+  _closeLightBox() {
+    this.setState({
+      lightboxShowing: false,
+      lightboxSelected: null
+    });
   }
 }
  

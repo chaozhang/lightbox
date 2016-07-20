@@ -27,7 +27,7 @@ class Home extends React.Component {
     }
 
     return <div className="content home">
-      <label>Google Image Search - 'goal', lightbox app.</label>
+      <label>Google Image Search, grid layout, lightbox app.</label>
       {content}
     </div>;
   }
