@@ -6,8 +6,8 @@ var {Link} = Router
  
 class Header extends React.Component {
   static defaultProps = {
-    repo: "https://github.com/chaozhang/webapp-skeleton",
-    issues: "https://github.com/chaozhang/webapp-skeleton/issues/new"
+    repo: "https://github.com/chaozhang/lightbox",
+    issues: "https://github.com/chaozhang/lightbox/issues/new"
   }
 
   render() {
