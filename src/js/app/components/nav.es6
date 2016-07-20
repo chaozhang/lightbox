@@ -18,15 +18,15 @@ class Header extends React.Component {
   }
 
   getNavItems() {
-    var naveItems = [];
+    var naveItems = [], item;
 
-    for(let x of this.props.navItems) {
-      let item = <li>
-        <Link to={x.url}>{x.name}</Link>
-      </li>
+    this.props.navItems.forEach((itemData, index) => {
+      item = <li>
+        <Link to={itemData.url}>{itemData.name}</Link>
+      </li>;
 
-      naveItems.push(item)
-    }
+      naveItems.push(item);
+    });
 
     return naveItems;
   }

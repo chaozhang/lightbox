@@ -11,11 +11,12 @@ class ImagesGrid extends React.Component {
 
   render() {
     var images = [],
-    lightboxComp;
+    lightboxComp,
+    clickEvent;
 
     this.props.images.forEach((item, index) => {
       // create click callback
-      let clickEvent = this._openLightbox.bind(this, index)
+      clickEvent = this._openLightbox.bind(this, index)
 
       images.push(
         <li title={item.title} onClick={clickEvent}>

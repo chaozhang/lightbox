@@ -40,9 +40,9 @@ class Footer extends React.Component {
     var gitBtns = [];
     var currentYear = (new Date()).getFullYear();
 
-    for(var type of this.props.git.btnTypes) {
+    this.props.git.btnTypes.forEach((type, index) => {
       gitBtns.push(this.buildGitBtn(type));
-    }
+    });
 
     return <footer>
       <div className="social">{gitBtns}</div>

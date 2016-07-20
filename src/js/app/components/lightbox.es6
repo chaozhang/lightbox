@@ -22,19 +22,19 @@ class Lightbox extends React.Component {
             Lightbox Gallery
           </div>
           <a className="modal-close" onClick={this.props.onClose}>
-            <Icon iconName="close"/>
+            <Icon iconName="close" alt="X"/>
           </a>
         </div>
         <div className="modal-body">
           <div className="nav">
             <a className="left" onClick={this._onNavigate.bind(this, Direction.PREV)}>
-              <Icon iconName="chevronleft"/>
+              <Icon iconName="chevronleft" alt="<"/>
             </a>
           </div>
           <img src={selectedImg.link}/>
           <div className="nav">
             <a className="right" onClick={this._onNavigate.bind(this, Direction.NEXT)}>
-              <Icon iconName="chevronright"/>
+              <Icon iconName="chevronright" alt=">"/>
             </a>
           </div>
         </div>

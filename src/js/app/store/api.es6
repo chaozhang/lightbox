@@ -1,10 +1,13 @@
+import Es6Promise from 'es6-promise-polyfill'
+
 const API_KEY = "AIzaSyBeQKxCMRExRShOClX1Ei1VFdjdUI7wX98";
 const GOOGLE_SEARCH_ENGINE_ID = "013521578711198445725:wxlfdxdhixc";
+
 
 var _request = {
   // http get request
   ajaxGet: (url) => {
-    return new Promise(
+    return new Es6Promise.Promise(
       (resolve, reject) => {
         var request = new XMLHttpRequest();
         request.onreadystatechange = () => {
@@ -27,7 +30,7 @@ var _request = {
   },
   // jsonp
   jsonp: (url) => {
-    return new Promise(
+    return new Es6Promise.Promise(
       (resolve, reject) => {
         var id = '' + Math.round(99999 * Math.random());
         var callbackName = 'jsonp_callback_' + id;

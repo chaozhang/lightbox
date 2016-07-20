@@ -1,5 +1,10 @@
 import React from 'react'
 
+var _isIE = (userAgent) => {
+  userAgent = userAgent || navigator.userAgent;
+  return userAgent.indexOf("MSIE ") > -1 || userAgent.indexOf("Trident/") > -1 || userAgent.indexOf("Edge/") > -1;
+}
+
 class Icon extends React.Component {
   static defaultProps = {
     iconName: 'alert'
@@ -10,7 +15,11 @@ class Icon extends React.Component {
       __html: '<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/svg/sprite.svg#' + this.props.iconName + '"></use>'
     };
 
-    return <svg dangerouslySetInnerHTML={htmlString}/>;
+    if (_isIE()) {
+    	return <div>{this.props.alt}</div>;
+    } else {
+    	return <svg dangerouslySetInnerHTML={htmlString}/>;
+    }   
   }
 }
 
