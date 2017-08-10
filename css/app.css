@@ -556,7 +556,6 @@ footer p a {
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 2rem;
-  -webkit-border-radius: 0.25rem;
   border-radius: 0.25rem;
   background-color: #fff;
   z-index: 10;
