@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var deploy = require('gulp-gh-pages');
 var del = require('del');
 var browserSync = require("browser-sync");
 var stylus = require('gulp-stylus');
@@ -7,12 +6,11 @@ var nib = require('nib');
 var webpack = require('webpack-stream');
 var webpackConfig = require('./webpack.config.js');
 var paths = require('./gulp/path.js');
+var requireDir = require('require-dir');
 
-// deploy to prod server
-gulp.task('deploy', function() {
-  gulp.src(paths.output + '/**/*')
-    .pipe(deploy())
-});
+// require all gulp tasks
+requireDir('./gulp/tasks', { recurse: true });
+
 
 // build app js
 gulp.task('app:js', function () {

@@ -4,6 +4,7 @@
  * common paths defined for gulp tasks
  */
 
+
 module.exports = {
   assets: './assets',
   src: './src',
