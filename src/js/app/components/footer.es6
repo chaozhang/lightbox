@@ -47,7 +47,7 @@ class Footer extends React.Component {
     return <footer>
       <div className="social">{gitBtns}</div>
       <p>Copyright &copy; {currentYear}, All rights reserved.</p>
-      <p>Created and maintained by <a href="https://github.com/chaozhang/" target="_blank">Chao Zhang</a> (Analytics Engineer at Salesforce).</p>
+      <p>Created and maintained by <a href="https://github.com/chaozhang/" target="_blank">Chao Zhang</a> (Principal Software Engineer at Workday).</p>
     </footer>
   }
 }
