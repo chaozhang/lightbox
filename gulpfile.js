@@ -5,14 +5,8 @@ var browserSync = require("browser-sync");
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 var webpack = require('webpack-stream');
-var webpackConfig = require("./webpack.config.js");
-
-var paths = {
-  assets: './assets',
-  src: './src',
-  output: './dist',
-  npm: './node_modules'
-};
+var webpackConfig = require('./webpack.config.js');
+var paths = require('./gulp/path.js');
 
 // deploy to prod server
 gulp.task('deploy', function() {
@@ -64,7 +58,7 @@ gulp.task('server', function () {
 });
 
 // build watch
-gulp.task('watch', function() {
+gulp.task('watch', ['server'], function() {
   gulp.watch([paths.src + '/js/**/*.es6'], ['app:js'])
   gulp.watch([paths.src + '/stylus/**/*.styl'], ['app:css'])
 });
