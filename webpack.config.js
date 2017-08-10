@@ -3,7 +3,6 @@ module.exports = {
   output: {
     filename: "app.js"
   },
-  watch: false,
   cache: true,
   module: {
     loaders: [
