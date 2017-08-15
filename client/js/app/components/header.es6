@@ -1,6 +1,7 @@
 import React from 'react'
 import Router from 'react-router'
 import Icon from '../components/icon.es6'
+import messages from './messages.es6';
 
 var {Link} = Router
  
@@ -15,6 +16,7 @@ class Header extends React.Component {
       <div className="container">
         <Link id="logo" to="/">
           <Icon iconName="home" alt="Home"/>
+          {messages.toString()}
         </Link>
         <div className="links">
           <a href={this.props.repo} target="_blank">Github</a>

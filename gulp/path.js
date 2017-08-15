@@ -7,7 +7,7 @@
 
 module.exports = {
   assets: './assets',
-  src: './src',
   output: './dist',
-  npm: './node_modules'
+  npm: './node_modules',
+  client: './client'
 };

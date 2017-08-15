@@ -9,6 +9,6 @@ var paths = require('../path.js');
 
 
 gulp.task('app:html', function () {
-  gulp.src(paths.src + '/index.html')
+  gulp.src(paths.client + '/index.html')
     .pipe(gulp.dest(paths.output))
 });

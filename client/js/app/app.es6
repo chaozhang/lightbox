@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react';
 import Router from 'react-router'
 import Home from './pages/home.es6'
 import About from './pages/about.es6'
@@ -10,7 +10,7 @@ import Page from './enums/page.es6'
 
 var { Route, DefaultRoute, RouteHandler } = Router
  
-class App extends React.Component {
+class App extends Component {
 
   render() {
     return <div className='bodywrap'>

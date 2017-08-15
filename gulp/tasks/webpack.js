@@ -11,7 +11,7 @@ var paths = require('../path.js');
 
 
 gulp.task('app:js', function () {
-  gulp.src(paths.src + '/js/app/app.es6')
+  gulp.src(paths.client + '/js/app/app.es6')
     .pipe(webpack(webpackConfig))
     .pipe(gulp.dest(paths.output + '/js'));
 });

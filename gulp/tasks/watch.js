@@ -9,6 +9,6 @@ var paths = require('../path.js');
 
 
 gulp.task('watch', ['server'], function() {
-  gulp.watch([paths.src + '/js/**/*.es6'], ['app:js'])
-  gulp.watch([paths.src + '/stylus/**/*.styl'], ['app:css'])
+  gulp.watch([paths.client + '/js/**/*.es6'], ['app:js'])
+  gulp.watch([paths.client + '/stylus/**/*.styl'], ['app:css'])
 });
