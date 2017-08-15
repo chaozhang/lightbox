@@ -11,7 +11,7 @@ var nib = require('nib');
 
 
 gulp.task('app:css', function() {
-  gulp.src(paths.client + '/stylus/app.styl')
+  gulp.src(paths.app + '/stylus/app.styl')
     .pipe(stylus({
       'include css': true,
       use: [nib()], 

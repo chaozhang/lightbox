@@ -9,5 +9,5 @@ module.exports = {
   assets: './assets',
   output: './dist',
   npm: './node_modules',
-  client: './client'
+  app: './app'
 };
