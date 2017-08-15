@@ -16,7 +16,6 @@ class Header extends React.Component {
       <div className="container">
         <Link id="logo" to="/">
           <Icon iconName="home" alt="Home"/>
-          {messages.toString()}
         </Link>
         <div className="links">
           <a href={this.props.repo} target="_blank">Github</a>
