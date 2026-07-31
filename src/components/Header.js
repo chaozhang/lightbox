@@ -9,7 +9,7 @@ export default function Header({
 }) {
   return h('header', { className: 'header' },
     h('div', { className: 'container header-container' },
-      h('a', { href: '/', className: 'brand-logo', title: 'Lightbox Home' },
+      h('a', { href: '#/', className: 'brand-logo', title: 'Lightbox Home' },
         h('div', { className: 'brand-icon' }, h(Camera, { size: 20 })),
         h('span', null, 'Lightbox')
       ),
